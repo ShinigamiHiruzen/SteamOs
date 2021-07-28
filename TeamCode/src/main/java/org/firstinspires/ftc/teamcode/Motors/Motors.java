@@ -37,7 +37,7 @@ public class Motors extends Motores implements InterfaceMotors {
 
     }
     public void activated(){
-        if(fleft.getPower() > 1){
+        if(fleft.getPower() < 1){
             telemetry.addData("MotorL", "Loaded!");
             telemetry.update();
              if(fright.getPower() > 1){
