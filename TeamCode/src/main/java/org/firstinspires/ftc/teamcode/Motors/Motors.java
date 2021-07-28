@@ -27,7 +27,7 @@ public class Motors extends Motores implements InterfaceMotors {
     }
     public void fleft(){
         fleft.setDirection(DcMotor.Direction.REVERSE);
-        fleft.setPower(1);
+        fleft.setPower(-1);
         try {
             lp.wait();
         } catch (InterruptedException e) {
