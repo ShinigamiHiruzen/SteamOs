@@ -4,7 +4,6 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 public class Motors extends Motores implements InterfaceMotors {
@@ -19,7 +18,7 @@ public class Motors extends Motores implements InterfaceMotors {
 
         fright.setPower(1);
         try {
-            lp.wait();
+            lp.wait(10);
         } catch (InterruptedException e) {
             telemetry.addData("error: ", fright.getConnectionInfo());
         }
@@ -38,14 +37,25 @@ public class Motors extends Motores implements InterfaceMotors {
     }
     public void activated(){
         if(fleft.getPower() > 1){
-            telemetry.addData("MotorL", "Loaded!");
+            telemetry.addData("MotorL", "Activated!");
             telemetry.update();
              if(fright.getPower() > 1){
-              telemetry.addData("MotorR", "Loaded!");
+              telemetry.addData("MotorR", "Activated!");
               telemetry.update();
             }
         }
     }
+    public void off(){
+        if(fleft.getPower() == 0){
+            telemetry.addData("MotorL", "Disabled!");
+            telemetry.update();
+            if(fright.getPower() == 0){
+                telemetry.addData("MotorR", "Disabled!");
+                telemetry.update();
+            }
+        }
+    }
+
 
 }
 
