@@ -25,6 +25,7 @@ public class Motors extends Motores implements InterfaceMotors {
         
         // this variable is responsible for detect error and to send for console
         try {
+            // this variable is responsible for the time the engine will stay on
             lp.wait(10);
         } catch (InterruptedException e) {
             telemetry.addData("error: ", fright.getConnectionInfo());
@@ -42,7 +43,7 @@ public class Motors extends Motores implements InterfaceMotors {
         
         // this variable is responsible for detect error and to send for console
         try {
-            // this variable is responsible for the elapsed time of the report.
+            // this variable is responsible for the time the engine will stay on
             lp.wait(10); 
         } catch (InterruptedException e) {
             telemetry.addData("Error: ", fleft.getConnectionInfo());
